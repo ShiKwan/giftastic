@@ -1,36 +1,45 @@
 $(document).ready(function(){
 	var gifArray = ["game of throne", "walking dead", "the punisher", "wonder woman", "dare devil", "thor ragnarok"];
-
+	$(".images-holder").slideUp();
 	$(document).on("click", ".gif-btn", function() {
 	  console.log("here");
 
       var giphy = $(this).attr("data-name");
+      var rating = "&rating="+$(".ddlRating").val();
+      var limit = "&limit="+$(".ddlLimit").val();
+      console.log(rating);
       console.log(giphy);
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        giphy + "&api_key=jyuSEDNjEUsbbzshiX4ZtrIfSv7nWFvy&limit=10";
+        giphy + "&api_key=jyuSEDNjEUsbbzshiX4ZtrIfSv7nWFvy"+limit+rating;
 
       $.ajax({
           url: queryURL,
           method: "GET"
         })
         .done(function(response) {
-
+        	$(".images-holder").slideUp();
         	$(".images-holder").empty();
+        	$(".images-holder").slideDown();
           var results = response.data;
 
           for (var i = 0; i < results.length; i++) {
           	console.log(results[i]);
             var gifDiv = $("<div class='item'>");
-
+            var labelDiv = $("<div class='caption'>")
             var rating = results[i].rating;
 
-            var p = $("<p>").text("Rating: " + rating);
+            var p = $("<h3>").text("Rating: " + rating);
 
-            var personImage = $("<img>");
-            personImage.attr("src", results[i].images.fixed_height.url);
-
-            gifDiv.prepend(p);
+            var personImage = $("<img class='lazy'>");
+            personImage.addClass("gif");
+            personImage.attr("data-src", results[i].images.fixed_height.url);
+            personImage.attr("data-still", results[i].images.fixed_height_still.url);
+            personImage.attr("data-animate", results[i].images.fixed_height.url);
+            personImage.attr("data-state", "still");
+            personImage.attr("src", results[i].images.fixed_height_still.url);
+            labelDiv.prepend(p);
             gifDiv.prepend(personImage);
+            gifDiv.prepend(labelDiv);
 
             $(".images-holder").prepend(gifDiv);
           }
@@ -39,7 +48,7 @@ $(document).ready(function(){
         });
     });
 
- 	$(".gif").on("click", function() {
+ 	$(document).on("click", ".gif", function() {
         var state = $(this).attr("data-state");
         console.log(state);
         if(state == "still"){

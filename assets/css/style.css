@@ -1,5 +1,9 @@
+h3 span{
+	float:right;
+}
+
 .gif-btn{
-	margin: 0 2px 0 2px;
+	margin: 6px 2px 6px 2px;
 }
 
 #audio_on {
@@ -7,4 +11,12 @@
 }
 #audio_mute {
 	display: none;
+}
+.item {
+	display: inline-block;
+	padding: 1% 1% 1% 1%;
+}
+
+.images-holder{
+	text-align: center;
 }
