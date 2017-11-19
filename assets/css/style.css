@@ -1,0 +1,10 @@
+.gif-btn{
+	margin: 0 2px 0 2px;
+}
+
+#audio_on {
+	display: inline;
+}
+#audio_mute {
+	display: none;
+}

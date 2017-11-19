@@ -28,7 +28,7 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
-		    <li class="active"><a href="index.html">Game <span class="sr-only">(current)</span></a></li>
+		    <li class="active"><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
 		  </ul>
 		  <ul class="nav navbar-nav navbar-right">
 		  	<li><a id="navAudio" class="play" href="#">
@@ -42,7 +42,52 @@
 		</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</nav>
+	<div class="row">
+		<div class="col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">GIPHY Buttons</h3>
+				</div>
+				<div class="panel-body">
+					<div class="button-container">
+
+						<button class="btn btn-default gif-btn" data-name="game of throne">game of throne</button>
+						<button class="btn btn-default gif-btn" data-name="walking dead">walking dead</button>
+						<button class="btn btn-default gif-btn" data-name="the punisher">the punisher</button>
+						<button class="btn btn-default gif-btn" data-name="wonder woman">wonder woman</button>
+						<button class="btn btn-default gif-btn" data-name="dare devil">dare devil</button>
+						<button class="btn btn-default gif-btn" data-name="thor ragnarok">thor ragnarok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">Tools</h3>
+				</div>
+				<div class="panel-body">
+					<div class="menu-container">
+						<div class="form-inline">
+							<div class="form-group">
+								<input class="form-control new-giphy" id="txtGiphy" placeholder="enter new giphy here">
+							</div>
+							<button id="cmdSubmit" type="submit" class="btn btn-default">Submit</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="jumbotron">
+		<div class=" images-holder">
+			<img src="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-still="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-animate="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" data-state="still" class="gif">
+		</div>
+	</div>
 	
+
+
+
 
 
 	<!-- jQuery, javascript file for the Bootstrap's javascript file to function -->
@@ -50,7 +95,7 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="jquery.lazy.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.js"></script>
 	
 	<script src="assets/javascript/app.js"></script>
 </body>
