@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	var gifArray = ["game of throne", "walking dead", "the punisher", "wonder woman", "dare devil", "thor ragnarok"];
-	$(".images-holder").slideUp();
 	$(document).on("click", ".gif-btn", function() {
 	  console.log("here");
 
@@ -17,9 +16,6 @@ $(document).ready(function(){
           method: "GET"
         })
         .done(function(response) {
-        	$(".images-holder").slideUp();
-        	$(".images-holder").empty();
-        	$(".images-holder").slideDown();
           var results = response.data;
 
           for (var i = 0; i < results.length; i++) {
