@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var gifArray = ["game of throne", "walking dead", "the punisher", "wonder woman", "dare devil", "thor ragnarok"];
+	var gifArray = ["deadpool", "harley quinn", "the punisher", "wonder woman", "daredevil", "thor ragnarok"];
 	$(".images-holder").slideUp();
 	$(document).on("click", ".gif-btn", function() {
 	  console.log("here");
