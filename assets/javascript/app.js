@@ -2,7 +2,7 @@ $(document).ready(function(){
 	var gifArray = ["deadpool", "harley quinn", "the punisher", "wonder woman", "daredevil", "thor ragnarok"];
 
 	$(document).on("click", ".gif-btn", function() {
-	  console.log("here");
+	   $(".images-holder").empty();
 
       var giphy = $(this).attr("data-name");
       var rating = "&rating="+$(".ddlRating").val();
